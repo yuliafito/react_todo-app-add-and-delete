@@ -4,14 +4,14 @@ import { TodoItem } from '../TodoItem/TodoItem';
 type Props = {
   todos: Todo[];
   onDelete: (todoId: number) => void;
-  loadingTodos: number[];
+  loadingTodosIDs: number[];
   tempTodo: Todo | null;
 };
 
 export const TodoList: React.FC<Props> = ({
   todos,
   onDelete,
-  loadingTodos,
+  loadingTodosIDs,
   tempTodo,
 }) => {
   return (
@@ -21,7 +21,7 @@ export const TodoList: React.FC<Props> = ({
           key={todo.id}
           todo={todo}
           onDelete={onDelete}
-          isLoading={loadingTodos.includes(todo.id)}
+          isLoading={loadingTodosIDs.includes(todo.id)}
         />
       ))}
 

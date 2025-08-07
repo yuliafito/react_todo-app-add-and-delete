@@ -18,8 +18,7 @@ export const Header: React.FC<Props> = ({
   title,
   setTitle,
 }) => {
-  const areAllCompleted =
-    todos.length > 0 && todos.every(todo => todo.completed);
+  const areAllCompleted = !!todos.length && todos.every(todo => todo.completed);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
